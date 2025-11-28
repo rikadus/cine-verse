@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Search, Clapperboard } from "lucide-react"; // Importando ícones
+// 1. Adicionamos a importação do ícone 'Youtube'
+import { Search, Clapperboard, Youtube } from "lucide-react";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
@@ -8,10 +9,7 @@ const Navbar = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-
     if (!search) return;
-
-    // Redireciona para a página de busca enviando o termo na URL
     navigate(`/search?q=${search}`);
     setSearch("");
   };
@@ -19,13 +17,28 @@ const Navbar = () => {
   return (
     <nav className="bg-black border-b border-gray-800 px-4 py-4 mb-8 sticky top-0 z-50">
       <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-        {/* Logo que volta para Home */}
-        <Link
-          to="/"
-          className="flex items-center gap-2 text-2xl font-bold text-yellow-500 hover:text-yellow-400 transition"
-        >
-          <Clapperboard /> CineVerse
-        </Link>
+        {/* GRUPO ESQUERDA: Logo + Youtube */}
+        <div className="flex items-center gap-6">
+          {/* Logo CineVerse */}
+          <Link
+            to="/"
+            className="flex items-center gap-2 text-2xl font-bold text-yellow-500 hover:text-yellow-400 transition"
+          >
+            <Clapperboard /> Cinema Verso
+          </Link>
+
+          {/* 2. Link do YouTube */}
+          {/* Troque o href pelo link do seu canal */}
+          <a
+            href="https://www.youtube.com/@SeuCanalAqui"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-500 hover:text-red-400 transition hover:scale-110"
+            title="Visite nosso canal"
+          >
+            <Youtube size={28} />
+          </a>
+        </div>
 
         {/* Formulário de Busca */}
         <form onSubmit={handleSubmit} className="flex gap-2 w-full sm:w-auto">
