@@ -30,7 +30,7 @@ const Navbar = () => {
           {/* 2. Link do YouTube */}
           {/* Troque o href pelo link do seu canal */}
           <a
-            href="https://www.youtube.com/@SeuCanalAqui"
+            href="https://www.youtube.com/@canalcinemaverso"
             target="_blank"
             rel="noopener noreferrer"
             className="text-red-500 hover:text-red-400 transition hover:scale-110"
