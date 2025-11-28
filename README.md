@@ -1,73 +1,75 @@
-# React + TypeScript + Vite
+# CineVerse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre o Projeto
 
-Currently, two official plugins are available:
+O **CineVerse** é uma aplicação Front-end desenvolvida para consultar e visualizar informações sobre filmes. O projeto consome a API do **TMDB (The Movie Database)** para trazer dados atualizados sobre lançamentos, notas, sinopses e detalhes técnicos de produções cinematográficas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O objetivo principal foi praticar o consumo de APIs externas, gerenciamento de rotas em SPAs (Single Page Applications) e estilização responsiva.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- **Catálogo de Melhores Filmes:** Exibição dos filmes mais bem avaliados na página inicial.
+- **Pesquisa em Tempo Real:** Funcionalidade de busca para encontrar qualquer filme do banco de dados.
+- **Página de Detalhes:** Visualização completa com poster, sinopse, orçamento, receita, duração e data de lançamento.
+- **Responsividade:** Layout adaptável para dispositivos móveis e desktop.
+- **Dark Mode:** Interface moderna com tema escuro.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tecnologias Utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **[React](https://reactjs.org/)** (Vite): Biblioteca para construção da interface.
+- **[TypeScript](https://www.typescriptlang.org/)**: Para tipagem estática e código mais seguro.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Framework de estilização utilitária.
+- **[React Router DOM](https://reactrouter.com/)**: Gerenciamento de rotas e navegação.
+- **[Axios](https://axios-http.com/)**: Cliente HTTP para requisições à API.
+- **[Lucide React](https://lucide.dev/)**: Biblioteca de ícones leves.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Como Rodar o Projeto
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Pré-requisitos
+
+Antes de começar, você precisará ter instalado em sua máquina:
+
+- [Node.js](https://nodejs.org/en/)
+- Uma chave de API do [TMDB](https://www.themoviedb.org/).
+
+### Passo a Passo
+
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/rikadus/cine-verse.git
+   cd cineverse
+   Instale as dependências
+   ```
+
+Bash
+
+npm install
+Configure as Variáveis de Ambiente Crie um arquivo .env na raiz do projeto e adicione sua chave da API:
+
+Snippet de código
+
+VITE_API_KEY=sua_chave_aqui
+VITE_API_BASE=[https://api.themoviedb.org/3/](https://api.themoviedb.org/3/)
+VITE_IMG_PREFIX=[https://image.tmdb.org/t/p/w500/](https://image.tmdb.org/t/p/w500/)
+Execute o projeto
+
+Bash
+
+npm run dev
+Acesse no navegador O projeto estará rodando em http://localhost:5173.
+
+Deploy
+O projeto está online e pode ser acessado através deste link: Clique aqui para acessar o CineVerse
+
+https://cine-verse-mocha.vercel.app/
+
+👨‍💻 Autor
+Desenvolvido por Ricardo Rodrigo.
